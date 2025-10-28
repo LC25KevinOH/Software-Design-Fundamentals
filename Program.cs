@@ -7,7 +7,7 @@
     internal class Program
     {
         // Set string array to filepath of 'Input File'
-        public static string[] csvLines = File.ReadAllLines("C:/Users/25KevinOHalloran/source/repos/TestFinal/SD-TA-001-A_OrganisationWeeklyTimesheet.csv");
+        public static string[] csvLines = File.ReadAllLines("C:/Users/25KevinOHalloran/source/repos/Software-Design-Fundamentals/SD-TA-001-A_OrganisationWeeklyTimesheet.csv");
 
         // Arrays to store details of each employee
         // csvLines.Length -1 to exclude the header line being counter
@@ -153,17 +153,31 @@
             }
         }
 
+        // Output file function
+        public void PrintFile(string outString)
+        {
+            string outputPath = "C:/Users/25KevinOHalloran/source/repos/Software-Design-Fundamentals/EmployeeReport.txt";
+
+            File.WriteAllText(outputPath, outString);
+
+            Console.WriteLine("Output file is a success!");
+        }
+
         // Main program function
         static void Main(string[] args)
         {
             Program p = new Program();
+
+            string tempOut = "";
 
             p.ReadFile();
 
             p.DepartmentSplit();
 
             p.CreateLine();
-            
+            tempOut = tempOut + $"---\n";
+
+
             // For the amount of departments there are, print the departments name and all relevant information
             for (int i = 0; i < p.depTotal.Length; i++)
             {
@@ -171,65 +185,69 @@
                 if (i == 0)
                 {
                     Console.WriteLine("Finance");
-                    
+                    tempOut = tempOut + $"Finance\n";
                 }
                 else if (i == 1)
                 {
                     Console.WriteLine("Marketing");
-                    
+                    tempOut = tempOut + $"Marketing\n";
                 }
                 else if (i == 2)
                 {
                     Console.WriteLine("Human Resources");
-                    
+                    tempOut = tempOut + $"Human Resources\n";
                 }
                 else if (i == 3)
                 {
                     Console.WriteLine("Engineering");
-                    
+                    tempOut = tempOut + $"Engineering\n";
                 }
                 else
                 {
                     Console.WriteLine("Management");
-                    
+                    tempOut = tempOut + $"Management\n";
                 }
 
                 Console.WriteLine($"Amount of employees: {p.depAmountEmp[i]}");
+                tempOut = tempOut + $"Amount of employees: {p.depAmountEmp[i]}\n";
 
                 Console.WriteLine($"Total Hours Worked: {p.depTotal[i]}");
+                tempOut = tempOut + $"Total Hours Worked: {p.depTotal[i]}\n";
 
                 // Calculate the average hours worked in the given department
                 double temp = new double();
                 temp = (p.depTotal[i] / p.depAmountEmp[i]);
 
                 Console.WriteLine($"Average Hours Worked: {temp}");
-                
+                tempOut = tempOut + $"Average Hours Worked: {temp}\n";
 
                 Console.WriteLine($"Employee with most hours: {p.depEmpMost[i]}");
-                
+                tempOut = tempOut + $"Employee with most hours: {p.depEmpMost[i]}\n";
 
                 p.CreateLine();
-                
+                tempOut = tempOut + $"---\n";
             }
 
             // Additionally all employee records are printed individually to reference if above is correct
             Console.WriteLine("All employee records:");
-            
+            tempOut = tempOut + $"All employee records:\n";
 
             p.CreateLine();
-            
+            tempOut = tempOut + $"---\n";
 
             // All employee records
             for (int i = 0; i < p.empName.Length; i++)
             {
                 Console.WriteLine($"Employee: {p.empName[i]} of department {p.empDep[i]} has worked {p.empTotal[i]}");
-                
+                tempOut = tempOut + $"Employee: {p.empName[i]} of department {p.empDep[i]} has worked {p.empTotal[i]}\n";
             }
 
             p.CreateLine();
-            
+            tempOut = tempOut + $"---\n";
+
+            p.PrintFile(tempOut);
         }
     }
 
-    // Does not feature Output file, Error messages, Any kind of feedback to user, Classes
+    // Features Output file functionality + Provides user feedback operation is complete, Still has Console print lines, No Error messages or Classes
 }

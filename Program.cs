@@ -18,9 +18,6 @@
         string[] empDepStr = new string[csvLen - 1]; //--> string to int
         int[] empDepInt = new int[csvLen - 1];
 
-        // unused array. remove ?
-        int[][] empHours = new int[5][];
-
         // int array for employee hours, 1 per day of week
         int[] empMon = new int[csvLen - 1];
         int[] empTue = new int[csvLen - 1];
@@ -31,17 +28,11 @@
         // array for storing all total hours of week (all day hours combined)
         int[] empTotal = new int[csvLen - 1];
 
-        // Department
-        /*
-         * showing average hours worked, total hours worked, and employee with most hours.
-         * 0. Finance 1. Marketing 2. Human Resources 3. Engineer 4. Management
-         */
-        // Department arrays. Only 5 unique types of departments. Above number will be used as reference numbers
-
         double[] depTotal = new double[5]; // All empTotal of the same department will be added together in this array, combined on the same index number
         int[] depAmountEmp = new int[5]; // How many employees there in each department. Will be used with above variable to find average hours of departments
         string[] depEmpMost = new string[5]; // to store a reference of the name of which employee worked the most for each department
 
+        string[] whichDepartments = { "Finance", "Marketing", "Human Resources", "Engineering", "Management" };
 
         // Simple function to create a long line of "---" to seperate sections in the output console
         public void CreateLine()
@@ -161,6 +152,9 @@
             // For the amount of departments there are, print the departments name and all relevant information
             for (int i = 0; i < p.depTotal.Length; i++)
             {
+                Console.WriteLine($"{p.whichDepartments[i]}");
+                tempOut = tempOut + ($"{p.whichDepartments[i]}\n");
+                /*
                 // Simple method to specify a different heading per loop
                 if (i == 0)
                 {
@@ -187,7 +181,7 @@
                     Console.WriteLine("Management");
                     tempOut = tempOut + $"Management\n";
                 }
-
+                */
                 Console.WriteLine($"Amount of employees: {p.depAmountEmp[i]}");
                 tempOut = tempOut + $"Amount of employees: {p.depAmountEmp[i]}\n";
 

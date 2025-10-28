@@ -14,7 +14,7 @@
 
         // string variables
         string[] empName = new string[csvLines.Length - 1];
-        string[] empDep = new string[csvLines.Length - 1];
+        int[] empDep = new int[csvLines.Length - 1]; //--> string to int
 
         // unused array. remove ?
         int[][] empHours = new int[5][];
@@ -71,7 +71,30 @@
                 string[] csvParts = csvLines[i].Split(',');
 
                 empName[i - 1] = csvParts[0];
-                empDep[i - 1] = csvParts[1];
+
+                //empDep[i - 1] = csvParts[1];
+                switch (csvParts[1])
+                {
+                    case "Finance":
+                        empDep[i - 1] = 0;
+                    break;
+
+                    case "Marketing":
+                        empDep[i - 1] = 1;
+                    break;
+
+                    case "Human Resources":
+                        empDep[i - 1] = 2;
+                    break;
+
+                    case "Engineer":
+                        empDep[i - 1] = 3;
+                    break;
+
+                    case "Management":
+                        empDep[i - 1] = 4;
+                    break;
+                }
 
                 empMon[i - 1] = int.Parse(csvParts[2]);
                 empTue[i - 1] = int.Parse(csvParts[3]);

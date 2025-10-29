@@ -154,34 +154,7 @@
             {
                 Console.WriteLine($"{p.whichDepartments[i]}");
                 tempOut = tempOut + ($"{p.whichDepartments[i]}\n");
-                /*
-                // Simple method to specify a different heading per loop
-                if (i == 0)
-                {
-                    Console.WriteLine("Finance");
-                    tempOut = tempOut + $"Finance\n";
-                }
-                else if (i == 1)
-                {
-                    Console.WriteLine("Marketing");
-                    tempOut = tempOut + $"Marketing\n";
-                }
-                else if (i == 2)
-                {
-                    Console.WriteLine("Human Resources");
-                    tempOut = tempOut + $"Human Resources\n";
-                }
-                else if (i == 3)
-                {
-                    Console.WriteLine("Engineering");
-                    tempOut = tempOut + $"Engineering\n";
-                }
-                else
-                {
-                    Console.WriteLine("Management");
-                    tempOut = tempOut + $"Management\n";
-                }
-                */
+                
                 Console.WriteLine($"Amount of employees: {p.depAmountEmp[i]}");
                 tempOut = tempOut + $"Amount of employees: {p.depAmountEmp[i]}\n";
 

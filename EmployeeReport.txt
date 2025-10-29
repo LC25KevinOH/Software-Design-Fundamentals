@@ -1,59 +1,59 @@
 ---
 Finance
-Amount of employees: 2
-Total Hours Worked: 65
-Average Hours Worked: 32.5
-Employee with most hours: John Smith
+Amount of employees: 25
+Total Hours Worked: 0
+Average Hours Worked: 0
+Employee with most hours: 
 ---
 Marketing
-Amount of employees: 5
-Total Hours Worked: 147
-Average Hours Worked: 29.4
-Employee with most hours: Drew Walters
+Amount of employees: 0
+Total Hours Worked: 0
+Average Hours Worked: NaN
+Employee with most hours: 
 ---
 Human Resources
-Amount of employees: 4
-Total Hours Worked: 106
-Average Hours Worked: 26.5
-Employee with most hours: Heather Lynch
+Amount of employees: 0
+Total Hours Worked: 0
+Average Hours Worked: NaN
+Employee with most hours: 
 ---
 Engineering
-Amount of employees: 10
-Total Hours Worked: 332
-Average Hours Worked: 33.2
-Employee with most hours: Alice Brown
+Amount of employees: 0
+Total Hours Worked: 0
+Average Hours Worked: NaN
+Employee with most hours: 
 ---
 Management
-Amount of employees: 4
-Total Hours Worked: 112
-Average Hours Worked: 28
-Employee with most hours: June Gaffney
+Amount of employees: 0
+Total Hours Worked: 0
+Average Hours Worked: NaN
+Employee with most hours: 
 ---
 All employee records:
 ---
-Employee: John Smith of department Finance has worked 33
-Employee: Jane Doe of department Marketing has worked 28
-Employee: Bob Johnson of department Human Resources has worked 21
-Employee: Alice Brown of department Engineering has worked 40
-Employee: Mark Lee of department Management has worked 15
-Employee: Samantha Johnson of department Marketing has worked 30
-Employee: Alex Murphy of department Engineering has worked 35
-Employee: Mary Smith of department Management has worked 30
-Employee: John Doe of department Engineering has worked 35
-Employee: Jack Smith of department Marketing has worked 29
-Employee: Nathan Dolan of department Human Resources has worked 28
-Employee: Greta Sweeney of department Engineering has worked 33
-Employee: Hank Swanson of department Marketing has worked 29
-Employee: June Gaffney of department Management has worked 35
-Employee: Dolores Gill of department Engineering has worked 31
-Employee: Sam Tarley of department Finance has worked 32
-Employee: Tom Murray of department Engineering has worked 29
-Employee: Matthew Finch of department Engineering has worked 33
-Employee: Jennifer Rogers of department Engineering has worked 34
-Employee: Drew Walters of department Marketing has worked 31
-Employee: Michelle Nugent of department Engineering has worked 31
-Employee: Frank Castle of department Human Resources has worked 28
-Employee: Heather Lynch of department Human Resources has worked 29
-Employee: Nigel Burrows of department Engineering has worked 31
-Employee: Ger Buckley of department Management has worked 32
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
+Employee:  of department  has worked 0
 ---

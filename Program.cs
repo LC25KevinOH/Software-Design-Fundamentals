@@ -136,7 +136,7 @@
         
         // Set string array to filepath of 'Input File'
         public static string[] csvLines = File.ReadAllLines(inputFilePath);
-        public static int csvLen = csvLines.Length;
+        public static int csvLength = csvLines.Length;
 
         public static int departmentAmount = 5;
         public Department[] theCompany = new Department[departmentAmount];
@@ -154,57 +154,57 @@
 
         public void ReadFile()
         {
-            for (int i = 1; i < csvLen; i++)
+            for (int i = 1; i < csvLength; i++)
             {
                 string[] csvParts = csvLines[i].Split(',');
 
-                Employee employeeTemp = new Employee(csvParts[0], csvParts[1], int.Parse(csvParts[2]), int.Parse(csvParts[3]), int.Parse(csvParts[4]), int.Parse(csvParts[5]), int.Parse(csvParts[6]));
+                Employee employeeTemporary = new Employee(csvParts[0], csvParts[1], int.Parse(csvParts[2]), int.Parse(csvParts[3]), int.Parse(csvParts[4]), int.Parse(csvParts[5]), int.Parse(csvParts[6]));
 
-                employeeTemp.SetDepartment();
-                employeeTemp.SetHoursWeek();
+                employeeTemporary.SetDepartment();
+                employeeTemporary.SetHoursWeek();
 
-                theCompany[employeeTemp.DepartmentIndex].RecieveEmployee(employeeTemp);
-                theCompany[employeeTemp.DepartmentIndex].SetAverageHours();
+                theCompany[employeeTemporary.DepartmentIndex].RecieveEmployee(employeeTemporary);
+                theCompany[employeeTemporary.DepartmentIndex].SetAverageHours();
             }
         }
 
         // Output file function
-        public void PrintFile(string outString, string outputPath)
+        public void PrintFile(string outputString, string outputPath)
         {
-            File.WriteAllText(outputPath, outString);
+            File.WriteAllText(outputPath, outputString);
 
-            Console.WriteLine("Output file is a success!");
+            Console.WriteLine($"Output file is a success! \nDestination of Output: {outputFilePath}");
         }
 
         // Main program function
         static void Main(string[] args)
         {
-            Program p = new Program();
+            Program reportSoftware = new Program();
 
-            string tempOut = "";
+            string temporaryOutput = "";
 
-            p.CreateDepartments();
+            reportSoftware.CreateDepartments();
 
-            p.ReadFile();
+            reportSoftware.ReadFile();
 
-            tempOut = tempOut + $"---\n";
+            temporaryOutput = temporaryOutput + $"---\n";
 
-            for (int i = 0; i < p.theCompany.Length; i++)
+            foreach(Department department in reportSoftware.theCompany)
             {
-                tempOut = tempOut + ($"{p.theCompany[i].Name}\n");
-                
-                tempOut = tempOut + $"Amount of employees: {p.theCompany[i].EmployeeAmount}\n";
+                temporaryOutput = temporaryOutput + ($"{department.Name}\n");
 
-                tempOut = tempOut + $"Total Hours Worked: {p.theCompany[i].OverallHours}\n";
-                
-                tempOut = tempOut + $"Average Hours Worked: {p.theCompany[i].AverageHours}\n";
-                
-                tempOut = tempOut + $"Employee with most hours: {p.theCompany[i].BestEmployee.Name}\n";
+                temporaryOutput = temporaryOutput + $"Total Hours Worked: {department.OverallHours}\n";
 
-                tempOut = tempOut + $"---\n";
+                temporaryOutput = temporaryOutput + $"Amount of Employees: {department.EmployeeAmount}\n";
+
+                temporaryOutput = temporaryOutput + $"Average Hours Worked: {department.AverageHours}\n";
+
+                temporaryOutput = temporaryOutput + $"Employee with Most Hours: {department.BestEmployee.Name} (Hours Worked: {department.BestEmployee.HoursWeek})\n";
+
+                temporaryOutput = temporaryOutput + $"---\n";
             }
 
-            p.PrintFile(tempOut, outputFilePath);
+            reportSoftware.PrintFile(temporaryOutput, outputFilePath);
         }
     }
 }
